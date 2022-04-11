@@ -13,7 +13,12 @@ thread_lock = Lock()
 url = 'https://api.coinbase.com/v2/prices/btc-usd/spot'
 
 def background_thread():
-    """Example of how to send server generated events to clients."""
+    """
+    sending server generated events to clients
+    data type: required url
+    response type: json
+    
+    """
     count = 0
     while True:
         socketio.sleep(3)
