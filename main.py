@@ -17,7 +17,7 @@ def background_thread():
     sending server generated events to clients
     data type: required url
     response type: json
-    
+
     """
     count = 0
     while True:
