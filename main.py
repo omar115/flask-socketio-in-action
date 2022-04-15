@@ -2,6 +2,7 @@ from threading import Lock
 from flask import Flask, render_template, session
 from flask_socketio import SocketIO, emit
 import requests
+import os
 
 async_mode = None
 
@@ -58,4 +59,4 @@ def connect():
     emit('my_response', {'data': 'Connected', 'count': 0})
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
